@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="./index.css">
+    <script src="index.js"></script>
+
+    <div id="home">
+        <h3>Login Page</h3>
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password"> 
+        <button onclick="login()" id="login"> login</button>  
+    </div>
+    <div id="login">
+        welcome!
+        <button> Logout</button>
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyD-jvfV3UFJZE3OjHDwKsqxQg2YAx0LFjk",
+          authDomain: "gdsc-4691c.firebaseapp.com",
+          projectId: "gdsc-4691c",
+          storageBucket: "gdsc-4691c.appspot.com",
+          messagingSenderId: "564779210167",
+          appId: "1:564779210167:web:b882e5ca46929a765a4432"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
+</body>
+</html>
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30l413.016486732842!2d75.93471079999999!3d17.6678138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1632642255374!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
