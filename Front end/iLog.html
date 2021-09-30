@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="logstyle.css">
+    <link rel="stylesheet" href="logphone.css">
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container{
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    padding: 5px;
+    overflow: hidden;
+}
+
+.buttom-box{
+    width:220px ;
+    margin: 35px auto;
+    position: relative;
+
+}
+.toggle-btn{
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+    background:transparent ;
+    border: 0;
+    outline:none ;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,#ff42ef,#ffba6a);
+    transition: 0.5s;
+}
+
+.input-group{
+    top: 145px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    color: white;
+    border-bottom:1px solid white ;
+    outline: none;
+    background: transparent;
+}
+::placeholder{
+    color: white;
+}
+.submit-btn{
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(to right,#ff42ef,#ffba6a);
+    border: 0;
+    outline: none;
+}
+#login{
+    left: 50px;
+}
+#signup{
+    left: 450px;
+}
+/* media queris */
+@media screen and (max-width: 600px){
+    .form-box{
+        background-image: none;
+    }
+    .container{
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.pexels.com/photos/3355732/pexels-photo-3355732.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="form-box">
+            
+            <div class="buttom-box">
+                <div id="btn"></div>
+                <button class="toggle-btn" onclick="loginfunction()">Log In</button>
+                <button class="toggle-btn" onclick="signIn()">Sign Up</button>
+            </div>
+            <form id="login" class="input-group">
+                
+                <input type="text" class="input-field" placeholder="Your name" required>
+                <input type="password" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Log In</button>
+
+            </form>
+            <form class="input-group" id="signup">
+                <input type="text" class="input-field" placeholder="Your name" required>
+                <input type="email" class="input-field" placeholder="Email Id">
+                <input type="password" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Sign Up</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        let login=document.getElementById('login');
+        let signup=document.getElementById('signup');
+        let btn=document.getElementById('btn');
+
+        function signIn(){
+            login.style.left="-400px";
+            signup.style.left="50px";
+            btn.style.left="110px"
+        }
+        function loginfunction(){
+            login.style.left="50px";
+            signup.style.left="450px";
+            btn.style.left="0px"
+        }
+    </script>
+</body>
+</html>
