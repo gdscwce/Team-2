@@ -20,7 +20,7 @@ const authRouter = require('./routes/auth');
 
 var app = express();
 
-MongoClient.connect('monogodb://localhost',(err,client)=>{
+MongoClient.connect('mongodb://localhost',(err,client)=>{
   if(err)
   {
     throw err;
