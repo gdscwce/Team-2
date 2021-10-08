@@ -9,7 +9,8 @@ const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
-
+const authUtils = require('./utils/auth');
+const hbs = require('hbs');
 
 
 
@@ -41,7 +42,7 @@ passport.use(new Strategy(
         return done(null,false);
       }
 
-      if(user.password !=password)
+      if(user.password != authUtils.hashPassword(password))
       {
         return done(null,false);
       }
@@ -51,17 +52,43 @@ passport.use(new Strategy(
   }
 ) )
 
+passport.serializeUser((user,done)=>{
+  done(null,user._id);
+
+});
+
+passport.deserializeUser((id,done)=>{
+  done(null,{id});
+});
+
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+hbs.registerPartials(path.join(__dirname,'views/partials'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'session secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
+app.use((req,res,next)=>{
+  res.locals.loggedIn = req.isAuthenticated();
+  next();
+
+});
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
