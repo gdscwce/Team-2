@@ -45,48 +45,48 @@
 }
 
 #block1{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('image1.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('navegaon.jpg');
     background-position: center;
     background-size: cover;
     color: white;
 }
 #block1:hover{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('image1.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('navegaon2.jpg');
 }
 
 
 #block2{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('image2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('tajmahal2.jpg');
     background-position: center;
     background-size: cover;
     color: white;
 }
 
 #block2:hover{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('image2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('tajmahal1.jpeg');
 }
 
 
 #block3{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('image3.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('jammu1.jpeg');
     background-position: center;
     background-size: cover;
     color: white;
 }
 
 #block3:hover{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('image3.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('jammu2.jpeg');
 }
 
 #block4{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('image4.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('kedarnath1.jpg');
     background-position: center;
     background-size: cover;
     color: white;
 }
 
 #block4:hover{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('image4.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('kedarnath2.jpeg');
 }
 
 
