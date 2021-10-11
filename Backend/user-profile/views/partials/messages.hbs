@@ -1,8 +1,7 @@
-{{#each message.error}}
-    <div class="alert alert-danger">{{ this }}</div>
+{{#each messages.error}}
+  <div class="alert alert-danger">{{ this }}</div>
 {{/each}}
 
-
-{{#each message.success}}
-     <div class="alert alert-success">{{ this }}</div>
+{{#each messages.success}}
+  <div class="alert alert-success">{{ this }}</div>
 {{/each}}

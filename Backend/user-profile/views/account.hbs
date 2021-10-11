@@ -1,12 +1,10 @@
-<h2>Edit Your Profile</h2>
+<h2>Edit your profile</h2>
 <form action="/users" method="POST">
-<div class="form-group">
-    <label for="name">
-        Name:
-    </label>
-    <input type="text" class="form-control" name="name" id="name">
-</div>
-<div class="form-group">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" name="name" id="name" value="{{ name }}">
+  </div>
+  <div class="form-group">
     <label for="name">city:</label>
     <input type="text" class="form-control" name="city" id="city" value="{{ city }}">
   </div>
@@ -14,14 +12,11 @@
     <label for="name">about:</label>
     <input type="text" class="form-control" name="about" id="about" value="{{ about }}">
   </div>
-<div class="form-group">
-    <label for="favlocation">
-        FavLocation:
-    </label>
-    <input type="text" class="form-control" name="favlocation" id="favlocation">
-</div>
-<button  class="btn btn-primary">Update</button>
-
+  <div class="form-group">
+    <label for="name">favlocation:</label>
+    <input type="text" class="form-control" name="favlocation" id="favlocation" value="{{ favlocation }}">
+  </div>
+  <button class="btn btn-primary">Update</button>
 </form>
 
-<p><a href="users/{{username}}" target="_blank">View Your Profile</a></p>
+<p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
