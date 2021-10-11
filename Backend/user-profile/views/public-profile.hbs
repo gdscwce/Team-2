@@ -1,0 +1,23 @@
+{{>messages}}
+
+{{#if username}}
+<h2>{{username}}'s profile</h2>
+<table class="table">
+    <tr>
+        <td>Name: </td>
+        <td>{{name}}</td>
+    </tr>
+    <tr>
+    <td>city:</td>
+    <td>{{ city }}</td>
+  </tr>
+  <tr>
+    <td>about:</td>
+    <td>{{ about }}</td>
+  </tr>
+    <tr>
+        <td>FavLocation: </td>
+        <td>{{favlocation}}</td>
+    </tr>
+</table>
+{{/if}}
