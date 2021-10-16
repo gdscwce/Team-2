@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    gap: 0.1em;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    
+    
+    
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    height: 350px;
+    margin-top:1.5rem;
+    margin-left: 1.2rem;
+}
+
+.block h2{
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 40px;
+}
+.block p{
+    font-size: 1.25rem;
+}
+.block h2,p{
+    text-align:center;
+}
+
+.para{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 17px;
+    /* text-align: justify; */
+    padding: 15px;
+    opacity: 0;
+}
+.para:hover{
+    opacity: 1;
+}
+.down{
+    /* background-color: rgba(226, 226, 226, 0.624); */
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 17px;
+    /* text-align: justify; */
+    padding: 15px;
+    color: black;
+}
+#block1{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('kedarnath1.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+#block1:hover{
+    transition: 1.5;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('kedarnath2.jpeg');
+    
+}
+
+
+#block2{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('navegaon.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#block2:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('navegaon2.jpg');
+}
+
+
+#block3{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('jammu1.jpeg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#block3:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('jammu2.jpeg');
+}
+
+#block4{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('tadoba.jpg');
+    background-position: center;
+    background-size: cover;
+    object-fit:cover;
+    color:white;
+}
+
+#block4:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('tadoba2.jpg');
+}
+
+#block5{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('taj1.jpeg');
+    background-position: center;
+    background-size: cover;
+    object-fit:cover;
+    color:white;
+}
+
+#block5:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('taj2.jpeg');
+}
+#block6{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('khopoli.jpg');
+    background-position: center;
+    background-size: cover;
+    object-fit:cover;
+    color:white;
+    
+}
+
+#block6:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('Khopoli2.jpg');
+}
+
+#block7{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('khopoli.jpg');
+    background-position: center;
+    background-size: cover;
+    object-fit:cover;
+    color:white;
+    width:90%;
+}
+
+#block7:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('Khopoli2.jpg');
+}
+#block14{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('khopoli.jpg');
+    background-position: center;
+    background-size: cover;
+    object-fit:cover;
+    color:white;
+    width:90%;
+}
+
+#block14{
+    order: 2;
+
+}
+#block7:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('Khopoli2.jpg');
+}
+#block14{
+
+
+

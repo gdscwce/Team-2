@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="styling.css"> -->
+
+  <title>Explore</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="phone.css"> 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+    :root {
+      --orange: #ffa500;
+    }
+
+    * {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      transition: all .2s linear;
+    }
+
+    *::selection {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-padding-top: 6rem;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 2rem 9%;
+    }
+
+    .heading {
+      text-align: center;
+      padding: 2.5rem 0
+    }
+
+    .heading span {
+      font-size: 3.5rem;
+      background: rgba(255, 165, 0, .2);
+      color: var(--orange);
+      border-radius: .5rem;
+      padding: .2rem 1rem;
+    }
+
+    .heading span.space {
+      background: none;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--orange);
+      color: #fff;
+      padding: .8rem 3rem;
+      border: .2rem solid var(--orange);
+      cursor: pointer;
+      font-size: 1.7rem;
+    }
+
+    .btn:hover {
+      background: rgba(255, 165, 0, .2);
+      color: var(--orange);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #333;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 9%;
+    }
+
+    header .logo {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    header .logo span {
+      color: var(--orange);
+    }
+
+    header .navbar a {
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 .8rem;
+    }
+
+    header .navbar a:hover {
+      color: var(--orange);
+    }
+
+    header .icons i {
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+      margin-right: 2rem;
+    }
+
+    header .icons i:hover {
+      color: var(--orange);
+    }
+
+    header .search-bar-container {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      background: #333;
+      border-top: .1rem solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      z-index: 1001;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .search-bar-container.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .search-bar-container #search-bar {
+      width: 100%;
+      padding: 1rem;
+      text-transform: none;
+      color: #333;
+      font-size: 1.7rem;
+      border-radius: .5rem;
+    }
+
+    header .search-bar-container label {
+      color: #fff;
+      cursor: pointer;
+      font-size: 3rem;
+      margin-left: 1.5rem;
+    }
+
+    header .search-bar-container label:hover {
+      color: var(--orange);
+    }
+
+    .login-form-container {
+      position: fixed;
+      top: -120%;
+      left: 0;
+      z-index: 10000;
+      min-height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, .7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-form-container.active {
+      top: 0;
+    }
+
+    .login-form-container form {
+      margin: 2rem;
+      padding: 1.5rem 2rem;
+      border-radius: .5rem;
+      background: #fff;
+      width: 50rem;
+    }
+
+    .login-form-container form h3 {
+      font-size: 3rem;
+      color: #444;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .login-form-container form .box {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.7rem;
+      color: #333;
+      margin: .6rem 0;
+      border: .1rem solid rgba(0, 0, 0, .3);
+      text-transform: none;
+    }
+
+    .login-form-container form .box:focus {
+      border-color: var(--orange);
+      ;
+    }
+
+    .login-form-container form #remember {
+      margin: 2rem 0;
+    }
+
+    .login-form-container form label {
+      font-size: 1.5rem;
+    }
+
+    .login-form-container form .btn {
+      display: block;
+      width: 100%;
+    }
+
+    .login-form-container form p {
+      padding: .5rem 0;
+      font-size: 1.5rem;
+      color: #666;
+    }
+
+    .login-form-container form p a {
+      color: var(--orange);
+    }
+
+    .login-form-container form p a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    .login-form-container #form-close {
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      font-size: 5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #menu-bar {
+      color: #fff;
+      border: .1rem solid #fff;
+      border-radius: .5rem;
+      font-size: 3rem;
+      padding: .5rem 1.2rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
+      position: relative;
+      z-index: 0;
+    }
+
+    .home .content {
+      text-align: center;
+    }
+
+    .home .content h3 {
+      font-size: 4.5rem;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+    }
+
+    .home .content p {
+      font-size: 2.5rem;
+      color: #fff;
+      padding: .5rem 0;
+    }
+
+    .home .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .home .controls {
+      padding: 1rem;
+      border-radius: 5rem;
+      background: rgba(0, 0, 0, .7);
+      position: relative;
+      top: 10rem;
+    }
+
+    .home .controls .vid-btn {
+      height: 2rem;
+      width: 2rem;
+      display: inline-block;
+      border-radius: 50%;
+      background: #fff;
+      /* cursor: pointer; */
+      margin: 0 .5rem;
+    }
+
+    .home .controls .vid-btn.active {
+      background: var(--orange);
+    }
+
+    .carousel {
+      position: relative;
+      margin-top: 85px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .btn-add{
+      margin-top: 70px;
+    }
+   
+    /* media queries  */
+
+    @media (max-width:1200px) {
+
+      html {
+        font-size: 55%;
+      }
+
+    }
+
+    @media (max-width:991px) {
+
+      header {
+        padding: 2rem;
+      }
+
+      section {
+        padding: 2rem;
+      }
+
+    }
+
+    @media (max-width:768px) {
+
+      #menu-bar {
+        display: initial;
+      }
+
+      header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #333;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+
+      header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: #222;
+      }
+
+    }
+
+    @media (max-width:450px) {
+
+      html {
+        font-size: 50%;
+      }
+
+      .heading span {
+        font-size: 2.5rem;
+      }
+
+      .contact .row form .inputBox input {
+        width: 100%;
+      }
+
+      #carouselExampleCaptions {
+        margin-top: 250px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header start -->
+  <header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>T</span>ravel</a>
+
+    <nav class="navbar">
+      <a href="iTravel.html">Home</a>
+        <a href="gallery">Gallery</a>
+        <a href="buket.html">Bucket List</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="icons">
+      <i class="fas fa-search" id="search-btn"></i>
+     <a href="iLog.html"> <i class="fas fa-user" id="login-btn"></i></a>
+    </div>
+
+    <form action="" class="search-bar-container">
+      <input type="search" id="search-bar" placeholder="search here...">
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+  </header>
+  <!-- carousel start -->
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/explore3.jfif" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>First slide label</h1>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/explore5.jfif" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Second slide label</h1>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/explore2.jfif" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Third slide label</h1>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container">
+        
+    <div class="block" id="block1">
+        <h2>
+          <span class="shop-item-title">Kedarnath</span>
+        </h2>
+        <p>
+          <span class="shop-item-price">Uttarakhand</span>
+        </p>
+        <p class="para shop-item-image" >   Kedarnath Temple is a Hindu Temple dedicated to the Hindu God       
+          Shiva.
+          Nearest Airport -- Jolly Grant, situated at a distance of about 239 km  
+        </p>
+        <button class="btn btn-primary shop-item-button" type="button"  >Bucket it!</button>
+    </div>
+
+    <div class="block" id="block2">
+        <h2><span class="shop-item-title">Navegaon Bandh></span></h2>
+        <p> <span class="shop-item-price">Maharashtra</span></p>
+        <p class="para"> Navegaon National Park is a National Park located in the  Gondia district  in state of  Maharashtra , India .
+
+          Nearest Airport -- Nagpur
+          Nearest RailwayStation -- Dewalgaon
+           </p>
+           <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+    </div>
+    <div class="block" id="block3">
+        <h2 class="shop-item-title">Srinagar</h2>
+        <p class="shop-item-price">Jammu and Kashmir</p>
+        <p class="para">Srinagar is the  summer capital of Jammu and Kashmir
+          The city is known for its natural environment, gardens, waterfronts.
+          
+          Nearest Airport --  Srinagar International Airport is located 12 km from the Srinagar city.
+          Nearest RailwayStation --Udhampur
+           </p>
+           <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+    </div>
+
+    <div class="block" id="block4">
+        <h2 class="shop-item-title">The Tadoba Andhari Tiger Reserve</h2>
+        <p class="shop-item-price">Maharashtra</p>
+        <p class="para"> The Tadoba Andhari Tiger Reserve is a wildlife sanctuary in Chandrapur District of Maharashtra state in India.
+
+          It is Maharashtra's oldest and largest national park.
+        </p>          
+        <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+    </div>
+
+    <div class="block" id="block5">
+      <h2 class="shop-item-title">Taj Mahal</h2>
+      <p class="shop-item-price"> Uttar Pradesh</p>
+      <p>The Taj Mahal was built in 1648 by Shah Jehan as a memorial to his wife. Today, it is listed as one of the new Seven Wonders of the World.
+
+        Nearest Airport -- the IGI Airport of New Delhi
+        Nearest RailwayStation -- Agra Fort Railway Station </p>
+        <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+
+    </div> 
+    <div class="block" id="block6">
+    <h2 class="shop-item-title">Khopoli</h2>
+    <p class="shop-item-price">Maharashtra</p>
+    <p class="para">Khopoli is an industrial city in the Khalapur taluka of Raigad district, in the Indian state of Maharashtra, at the base of the Sahyadri mountains. Patalganga River, which is the tailrace channel of Tata Hydroelectric Power station, flows through Khopoli.</p>
+    <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+    </div>
+
+    <div class="block" id="block7" data-aos="fade-right" data-aos-offset="250"
+    data-aos-delay="50">
+      <h1 class="shop-item-title">Khopoli</h1>
+      <p class="shop-item-price"> Maharashtra</p>
+      <button class="btn btn-primary shop-item-button" type="button">Bucket it!</button>
+    </div>
+
+    <div >      
+      <p class="down"  data-aos="fade-left" data-aos-offset="250"
+      data-aos-delay="100">Khopoli is an industrial city in the Khalapur taluka of Raigad district, in the Indian state of Maharashtra, at the base of the Sahyadri mountains. Patalganga River, which is the tailrace channel of Tata Hydroelectric Power station, flows through Khopoli.</p>
+    </div>
+
+    <div class="block" id="block1">
+      <h2 class="shop-item-title">Kedarnath</h2>
+      <p class="shop-item-price">Uttarakhand</p>
+      <p class="para" >   Kedarnath Temple is a Hindu Temple dedicated to the Hindu God       
+        Shiva.
+        Nearest Airport -- Jolly Grant, situated at a distance of about 239 km  
+      </p>
+      <button class="btn btn-primary shop-item-button">Bucket it!</button>
+  </div>
+
+  <div class="block" id="block2">
+      <h2 class="shop-item-title">Navegaon Bandh</h2>
+      <p class="shop-item-price">Maharashtra</p>
+      <p class="para"> Navegaon National Park is a National Park located in the  Gondia district  in state of  Maharashtra , India .
+
+        Nearest Airport -- Nagpur
+        Nearest RailwayStation -- Dewalgaon
+         </p>
+         <button class="btn btn-primary shop-item-button">Bucket it!</button>
+  </div>
+  <div class="block" id="block3">
+      <h2 class="shop-item-title">Srinagar</h2>
+      <p class="shop-item-price">Jammu and Kashmir</p>
+      <p class="para">Srinagar is the  summer capital of Jammu and Kashmir
+        The city is known for its natural environment, gardens, waterfronts.
+        
+        Nearest Airport --  Srinagar International Airport is located 12 km from the Srinagar city.
+        Nearest RailwayStation --Udhampur
+         </p>
+         <button class="btn btn-primary shop-item-button">Bucket it!</button>
+  </div>
+
+  <div class="block" id="block4">
+      <h2 class="shop-item-title">The Tadoba Andhari Tiger Reserve</h2>
+      <p class="shop-item-price">Maharashtra</p>
+      <p class="para"> The Tadoba Andhari Tiger Reserve is a wildlife sanctuary in Chandrapur District of Maharashtra state in India.
+
+        It is Maharashtra's oldest and largest national park.
+      </p>          
+      <button class="btn btn-primary shop-item-button">Bucket it!</button>
+  </div>
+
+  <div class="block" id="block5">
+    <h2 class="shop-item-title">Taj Mahal</h2>
+    <p class="shop-item-price"> Uttar Pradesh</p>
+    <p>The Taj Mahal was built in 1648 by Shah Jehan as a memorial to his wife. Today, it is listed as one of the new Seven Wonders of the World.
+
+      Nearest Airport -- the IGI Airport of New Delhi
+      Nearest RailwayStation -- Agra Fort Railway Station </p>
+      <button class="btn btn-primary shop-item-button">Bucket it!</button>
+
+  </div> 
+  <div class="block" id="block6">
+  <h2 class="shop-item-title">Khopoli</h2>
+  <p class="shop-item-price">Maharashtra</p>
+  <p class="para">Khopoli is an industrial city in the Khalapur taluka of Raigad district, in the Indian state of Maharashtra, at the base of the Sahyadri mountains. Patalganga River, which is the tailrace channel of Tata Hydroelectric Power station, flows through Khopoli.</p>
+  </div>
+
+  <div class="block" id="block14" data-aos="fade-left" data-aos-offset="250"
+  data-aos-delay="50">
+    <h2 class="shop-item-title">Khopoli</h2>
+    <p class="shop-item-price">Maharashtra</p>
+    <button class="btn btn-primary shop-item-button">Bucket it!</button>
+  </div>
+  <div >      
+    <p class="down"  data-aos="fade-left" data-aos-offset="250"
+    data-aos-delay="100">Khopoli is an industrial city in the Khalapur taluka of Raigad district, in the Indian state of Maharashtra, at the base of the Sahyadri mountains. Patalganga River, which is the tailrace channel of Tata Hydroelectric Power station, flows through Khopoli.</p>
+  </div>
+
+
+</div>
+
+<link rel="stylesheet" href="../../../kc/Introduction-to-Web-Development-master/Introduction to JavaScript/Lesson 1/styles.css">k
+<script src="../../Introduction-to-Web-Development-master/Introduction to JavaScript/Lesson 1/store.js"></script>
+<h2>List </h2>
+<section class="container1 content-section">
+    <h2 class="section-header">BUCKET LIST</h2>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">Spot</span>
+        <span class="cart-price cart-header cart-column">Location</span>
+        <span class="cart-quantity cart-header cart-column"></span>
+    </div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title"></strong>
+        <span class="cart-total-price"></span>
+    </div>
+    <!-- <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button> -->
+</section>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script>let searchBtn = document.querySelector('#search-btn');
+    let searchBar = document.querySelector('.search-bar-container');
+    let formBtn = document.querySelector('#login-btn');
+    let loginForm = document.querySelector('.login-form-container');
+    let formClose = document.querySelector('#form-close');
+    let menu = document.querySelector('#menu-bar');
+    let navbar = document.querySelector('.navbar');
+    let videoBtn = document.querySelectorAll('.vid-btn');
+
+    window.onscroll = () => {
+      searchBtn.classList.remove('fa-times');
+      searchBar.classList.remove('active');
+      menu.classList.remove('fa-times');
+      navbar.classList.remove('active');
+      loginForm.classList.remove('active');
+    }
+
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('fa-times');
+      navbar.classList.toggle('active');
+    });
+
+    searchBtn.addEventListener('click', () => {
+      searchBtn.classList.toggle('fa-times');
+      searchBar.classList.toggle('active');
+    });
+
+    formBtn.addEventListener('click', () => {
+      loginForm.classList.add('active');
+    });
+  </script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
+</body>
+
+</html>
