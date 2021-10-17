@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container{
+.container2{
     gap: 0.1em;
     display: grid;
     grid-template-columns:1fr 1fr;
